@@ -1,50 +1,8 @@
-use std::cell::RefCell;
-use std::rc::Rc;
-
 use wasm_bindgen::prelude::*;
 use wasm_bindgen::JsCast;
 
-use web_sys::{console, HtmlElement, HtmlInputElement, MessageEvent, Worker};
+use web_sys::{console, Worker};
 
-/// A number evaluation struct
-///
-/// This struct will be the main object which responds to messages passed to the
-/// worker. It stores the last number which it was passed to have a state. The
-/// statefulness is not is not required in this example but should show how
-/// larger, more complex scenarios with statefulness can be set up.
-#[wasm_bindgen]
-pub struct NumberEval {
-    number: i32,
-}
-
-#[wasm_bindgen]
-impl NumberEval {
-    /// Create new instance.
-    pub fn new() -> NumberEval {
-        NumberEval { number: 0 }
-    }
-
-    /// Check if a number is even and store it as last processed number.
-    ///
-    /// # Arguments
-    ///
-    /// * `number` - The number to be checked for being even/odd.
-    pub fn is_even(&mut self, number: i32) -> bool {
-        self.number = number;
-        match self.number % 2 {
-            0 => true,
-            _ => false,
-        }
-    }
-
-    /// Get last number that was checked - this method is added to work with
-    /// statefulness.
-    pub fn get_last_number(&self) -> i32 {
-        self.number
-    }
-}
-
-/// Run entry point for the main thread.
 #[wasm_bindgen(start)]
 pub fn startup() {
     console_error_panic_hook::set_once();
@@ -53,47 +11,22 @@ pub fn startup() {
 }
 
 #[wasm_bindgen]
-pub fn run(c: web_sys::HtmlCanvasElement) {
-    // Here, we create our worker. In a larger app, multiple callbacks should be
-    // able to interact with the code in the worker. Therefore, we wrap it in
-    // `Rc<RefCell>` following the interior mutability pattern. Here, it would
-    // not be needed but we include the wrapping anyway as example.
-    //let worker_handle = Rc::new(RefCell::new(Worker::new("./worker.js").unwrap()));
+pub fn run(_c: web_sys::HtmlCanvasElement) {
     let worker_handle = Worker::new("./worker.js").unwrap();
     console::log_1(&"Created a new worker from within WASM".into());
 
     let obj = js_sys::Object::new();
-    js_sys::Reflect::set(&obj, &"type".into(), &"init".into());
-    js_sys::Reflect::set(&obj, &"width".into(), &JsValue::from_f64(100.0));
-    js_sys::Reflect::set(&obj, &"height".into(), &JsValue::from_f64(100.0));
-    worker_handle.post_message(&obj);
+    js_sys::Reflect::set(&obj, &"type".into(), &"init".into()).unwrap();
+    js_sys::Reflect::set(&obj, &"width".into(), &JsValue::from_f64(100.0)).unwrap();
+    js_sys::Reflect::set(&obj, &"height".into(), &JsValue::from_f64(100.0)).unwrap();
+    worker_handle.post_message(&obj).unwrap();
 
     let f = Closure::wrap(Box::new(move || { /* whatever */ }) as Box<dyn FnMut()>);
 
-    worker_handle.add_event_listener_with_callback("message", f.as_ref().unchecked_ref());
+    worker_handle
+        .add_event_listener_with_callback("message", f.as_ref().unchecked_ref())
+        .unwrap();
     f.forget();
-}
-
-/// Create a closure to act on the message returned by the worker
-fn get_on_msg_callback() -> Closure<dyn FnMut(MessageEvent)> {
-    let callback = Closure::wrap(Box::new(move |event: MessageEvent| {
-        console::log_2(&"Received response: ".into(), &event.data().into());
-
-        let result = match event.data().as_bool().unwrap() {
-            true => "even",
-            false => "odd",
-        };
-
-        let document = web_sys::window().unwrap().document().unwrap();
-        document
-            .get_element_by_id("resultField")
-            .expect("#resultField should exist")
-            .dyn_ref::<HtmlElement>()
-            .expect("#resultField should be a HtmlInputElement")
-            .set_inner_text(result);
-    }) as Box<dyn FnMut(_)>);
-
-    callback
 }
 
 #[wasm_bindgen]
