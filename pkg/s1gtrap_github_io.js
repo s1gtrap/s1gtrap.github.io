@@ -201,21 +201,20 @@ function makeMutClosure(arg0, arg1, dtor, f) {
     return real;
 }
 function __wbg_adapter_12(arg0, arg1) {
-    wasm._dyn_core__ops__function__FnMut_____Output___R_as_wasm_bindgen__closure__WasmClosure___describe__invoke__h8c6b2cf7bd0739f9(arg0, arg1);
+    wasm._dyn_core__ops__function__FnMut_____Output___R_as_wasm_bindgen__closure__WasmClosure___describe__invoke__h92cf903f7c4cf1bd(arg0, arg1);
 }
 
 /**
-* Run entry point for the main thread.
 */
 __exports.startup = function() {
     wasm.startup();
 };
 
 /**
-* @param {HTMLCanvasElement} c
+* @param {HTMLCanvasElement} _c
 */
-__exports.run = function(c) {
-    wasm.run(addHeapObject(c));
+__exports.run = function(_c) {
+    wasm.run(addHeapObject(_c));
 };
 
 function passArray8ToWasm0(arg, malloc) {
@@ -301,66 +300,6 @@ class Handle {
     }
 }
 __exports.Handle = Handle;
-/**
-* A number evaluation struct
-*
-* This struct will be the main object which responds to messages passed to the
-* worker. It stores the last number which it was passed to have a state. The
-* statefulness is not is not required in this example but should show how
-* larger, more complex scenarios with statefulness can be set up.
-*/
-class NumberEval {
-
-    static __wrap(ptr) {
-        const obj = Object.create(NumberEval.prototype);
-        obj.ptr = ptr;
-
-        return obj;
-    }
-
-    __destroy_into_raw() {
-        const ptr = this.ptr;
-        this.ptr = 0;
-
-        return ptr;
-    }
-
-    free() {
-        const ptr = this.__destroy_into_raw();
-        wasm.__wbg_numbereval_free(ptr);
-    }
-    /**
-    * Create new instance.
-    * @returns {NumberEval}
-    */
-    static new() {
-        const ret = wasm.numbereval_new();
-        return NumberEval.__wrap(ret);
-    }
-    /**
-    * Check if a number is even and store it as last processed number.
-    *
-    * # Arguments
-    *
-    * * `number` - The number to be checked for being even/odd.
-    * @param {number} number
-    * @returns {boolean}
-    */
-    is_even(number) {
-        const ret = wasm.numbereval_is_even(this.ptr, number);
-        return ret !== 0;
-    }
-    /**
-    * Get last number that was checked - this method is added to work with
-    * statefulness.
-    * @returns {number}
-    */
-    get_last_number() {
-        const ret = wasm.numbereval_get_last_number(this.ptr);
-        return ret;
-    }
-}
-__exports.NumberEval = NumberEval;
 
 async function load(module, imports) {
     if (typeof Response === 'function' && module instanceof Response) {
@@ -483,7 +422,7 @@ async function init(input) {
     imports.wbg.__wbindgen_throw = function(arg0, arg1) {
         throw new Error(getStringFromWasm0(arg0, arg1));
     };
-    imports.wbg.__wbindgen_closure_wrapper47 = function(arg0, arg1, arg2) {
+    imports.wbg.__wbindgen_closure_wrapper39 = function(arg0, arg1, arg2) {
         const ret = makeMutClosure(arg0, arg1, 7, __wbg_adapter_12);
         return addHeapObject(ret);
     };
