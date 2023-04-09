@@ -1,0 +1,21 @@
+{
+  "name": "tan.ge",
+  "version": "1.0.0",
+  "private": true,
+  "description": "",
+  "keywords": [],
+  "homepage": "https://github.com/s1gtrap/s1gtrap.github.io#readme",
+  "bugs": {
+    "url": "https://github.com/s1gtrap/s1gtrap.github.io/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/s1gtrap/s1gtrap.github.io.git"
+  },
+  "license": "MIT",
+  "author": "William Tange <will@brt.sexy> (https://tan.ge/)",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "(cd themes/isthmus && npm install)"
+  }
+}
