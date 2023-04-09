@@ -8,7 +8,7 @@ title: "Portfolio"
 
 A minimum viable product enabling users to share pictures of nearby bus stops on a map for others to enjoy.
 
-The backend consists of TypeScript using the fastify web framework, Postgres for data and Amazon S3 for media storage.
+The backend consists of TypeScript using the fastify web framework, Postgres for data storage and Amazon S3 for media storage.
 
 The frontend is written with TypeScript and React.
 
@@ -18,13 +18,15 @@ The frontend is written with TypeScript and React.
 
 An x86 disassembler written in Rust with a demo targeting WebAssembly mostly intended as a demo/toy project linking assembly code to machine code generated.
 
+Minimal utility in practice but it looks really cool to see specific parts of the machine code corresponding to associated assembly highlighted as you mouse over.
+
 #### Popeye
 
 [Demo](https://tan.ge/popeye-demo) | [Repo](https://github.com/s1gtrap/popeye)
 
 Another demo/toy project intended for optimizing training programs for workout routines using graph colouring.
 
-Written in Rust targeting WebAssembly with the Yew framework the datasets are loosely lifted from https://exrx.net.
+Written in Rust targeting WebAssembly using the Yew framework with the datasets loosely lifted/borrowed from https://exrx.net.
 
 No real purpose other than demo'ing the use of graph colouring and its application in something other than register allocation.
 
@@ -35,3 +37,9 @@ No real purpose other than demo'ing the use of graph colouring and its applicati
 A rushed attempt at a Hugo theme for my own personal website.
 
 Hugo seemed like the go-to for statically generated homepages.
+
+#### Homepage
+
+[Repo](https://github.com/s1gtrap/s1gtrap.github.io)
+
+The site you're on! Built with Hugo, deployed and hosted with GitHub Actions on GitHub Pages.
