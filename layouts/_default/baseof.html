@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ .Title | lower }} :: {{ .Site.Title | lower }}</title>
+    <meta name="description" content="{{ .Description }}" />
+    {{/* styles */}} {{ $options := dict "inlineImports" true }} {{ $styles :=
+    resources.Get "css/styles.css" }} {{ $styles = $styles | resources.PostCSS
+    $options }} {{ if hugo.IsProduction }} {{ $styles = $styles | minify |
+    fingerprint | resources.PostProcess }} {{ end }}
+    <link href="{{ $styles.RelPermalink }}" rel="stylesheet" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ (resources.Get "images/apple-touch-icon.png").RelPermalink }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ (resources.Get "images/favicon-32x32.png").RelPermalink }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ (resources.Get "images/favicon-16x16.png").RelPermalink }}">
+    <link rel="manifest" href="{{ (resources.Get "site.webmanifest").RelPermalink }}">
+  </head>
+  <body class="bg-slate-100 dark:bg-slate-900 prose-headings:font-mono prose-headings:font-normal">
+    {{ partial "header.html" . }}
+    {{ partial "nav.html" . }}
+    <div
+      class="container mx-auto"
+    >
+      <div class="grid grid-cols-12">
+        <div class="md:col-start-2 md:col-span-10 col-start-1 col-span-12 p-4 min-h-screen bg-slate-50 dark:bg-slate-800 border-x-2 dark:border-slate-700">
+          {{ block "main" . }}{{ end }}
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

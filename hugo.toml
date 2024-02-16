@@ -1,0 +1,50 @@
+baseURL = 'https://tan.ge/'
+languageCode = 'en-us'
+title = 's1g'
+
+[module]
+[module.hugoVersion]
+extended = false
+min = "0.112.0"
+[[module.mounts]]
+source = 'content'
+target = 'content'
+[[module.mounts]]
+source = "assets"
+target = "assets"
+[[module.mounts]]
+source = "hugo_stats.json"
+target = "assets/watching/hugo_stats.json"
+
+[build]
+writeStats = true
+[[build.cachebusters]]
+source = "assets/watching/hugo_stats\\.json"
+target = "styles\\.css"
+[[build.cachebusters]]
+source = "(postcss|tailwind)\\.config\\.js"
+target = "css"
+[[build.cachebusters]]
+source = "assets/.*\\.(js|ts|jsx|tsx)"
+target = "js"
+[[build.cachebusters]]
+source = "assets/.*\\.(.*)$"
+target = "$1"
+
+[markup.goldmark.renderer]
+unsafe = true
+
+
+[menus]
+[[menus.main]]
+name = 'About'
+pageRef = '/'
+weight = 10
+[[menus.main]]
+name = 'CV'
+pageRef = '/cv'
+weight = 20
+[[menus.main]]
+name = 'Portfolio'
+pageRef = '/portfolio'
+weight = 30

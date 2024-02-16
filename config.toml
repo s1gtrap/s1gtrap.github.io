@@ -1,9 +1,0 @@
-baseURL = 'https://tan.ge/'
-languageCode = 'en-us'
-title = 's1g'
-theme = 'isthmus'
-
-[markup]
-  [markup.goldmark]
-    [markup.goldmark.renderer]
-      unsafe = true
