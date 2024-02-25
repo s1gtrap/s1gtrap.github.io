@@ -11,7 +11,7 @@ I have a passion for low-level systems programming, highly interactive user expe
 
 I can always be reached by mail at `will at brt dot sexy` or `will at ${location.hostname}`.
 
-You can also try Matrix:
+You can also try me on Matrix:
 <a class="no-underline" href="https://matrix.to/#/@s1gtrap:matrix.org"><img class="inline w-4 h-4" src="https://matrix.org/assets/favicon.svg" /> `@s1gtrap:matrix.org`</a>
 
 I can also be found on other ocial media junctions under my pseudonym `@s1gtrap` including:
