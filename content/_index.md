@@ -3,6 +3,8 @@ menus = 'main'
 title = "About"
 +++
 
+### About Me
+
 I'm William! A graduate of computer science with a bachelor's degree from [Aarhus University](https://www.au.dk/en).
 
 I have a passion for low-level systems programming, highly interactive user experiences, and the interaction between the two!
