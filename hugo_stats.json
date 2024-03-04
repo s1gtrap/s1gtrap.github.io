@@ -47,6 +47,7 @@
       "col-span-12",
       "col-start-1",
       "container",
+      "dark:bg-red-700",
       "dark:bg-slate-700",
       "dark:bg-slate-800",
       "dark:bg-slate-900",
