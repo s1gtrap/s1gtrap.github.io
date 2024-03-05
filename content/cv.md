@@ -31,6 +31,6 @@ Fullstack, cross-platform app development. Frontend written in JavaScript with r
 
 [//]: # "In addition I designed websites for both the app (Pinguin) and company (Stagewise), unfortunately both of these are defunct, however I do have local copies handy."
 
-#### Skills
+## Skills
 
-TODO
+{{< skills >}}
