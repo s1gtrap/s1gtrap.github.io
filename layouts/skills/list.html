@@ -1,0 +1,17 @@
+{{ define "main" }}
+
+<pre>layouts/skills/list.html</pre>
+
+<article
+  style="border: 1px solid black; padding: 8px; background: rgba(0, 0, 0, 0.1)"
+>
+  {{ .Content }}
+  <hr />
+  <div style="display: flex; flex-direction: row; gap: 8px">
+    {{ range .Pages }}
+    <div>{{ .Render "li" }}</div>
+    {{ end }}
+  </div>
+</article>
+
+{{ end }}
