@@ -1,0 +1,5 @@
+<nav style="border: 1px solid black; padding: 8px; margin-bottom: 8px">
+  {{ range .Ancestors.Reverse }}
+  <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a> -&gt; {{ end }}
+  <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+</nav>

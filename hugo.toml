@@ -33,18 +33,3 @@ target = "$1"
 
 [markup.goldmark.renderer]
 unsafe = true
-
-
-[menus]
-[[menus.main]]
-name = 'About'
-pageRef = '/'
-weight = 10
-[[menus.main]]
-name = 'CV'
-pageRef = '/cv'
-weight = 20
-[[menus.main]]
-name = 'Portfolio'
-pageRef = '/portfolio'
-weight = 30

@@ -1,0 +1,7 @@
+<pre>layouts/_default/li.html</pre>
+
+<article style="border: 1px solid black; padding: 8px">
+  {{ .Content }}
+  <hr />
+  {{ range .RegularPages }} {{ .Render "li" }} {{ end }}
+</article>
