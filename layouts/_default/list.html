@@ -2,10 +2,12 @@
 
 <pre>layouts/_default/list.html</pre>
 
-<article style="border: 1px solid black; padding: 8px">
+<article
+  style="border: 1px solid black; padding: 8px; background: rgba(0, 0, 0, 0.1)"
+>
   {{ .Content }}
   <hr />
-  {{ range .RegularPages }} {{ .Render "li" }} {{ end }}
+  {{ range .Pages }} {{ .Render "li" }} {{ end }}
 </article>
 
 {{ end }}
