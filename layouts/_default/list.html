@@ -5,6 +5,7 @@
 <article
   style="border: 1px solid black; padding: 8px; background: rgba(0, 0, 0, 0.1)"
 >
+  <a href="{{ .RelPermalink }}"><h2>{{ .Title }}</h2></a>
   {{ .Content }}
   <hr />
   {{ range .Pages }} {{ .Render "li" }} {{ end }}
