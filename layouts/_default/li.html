@@ -3,7 +3,7 @@
 <article
   style="border: 1px solid black; padding: 8px; background: rgba(0, 0, 0, 0.1)"
 >
-  {{ .Content }}
+  {{ .Content }} {{ if (gt (len .Pages) 0) }}
   <hr />
-  {{ range .Pages }} {{ .Render "li" }} {{ end }}
+  {{ range .Pages }} {{ .Render "li" }} {{ end }} {{ end }}
 </article>
