@@ -1,10 +1,7 @@
-<pre>layouts/_default/li.html</pre>
-
 <article
-  style="border: 1px solid black; padding: 8px; background: rgba(0, 0, 0, 0.1)"
+  class="prose prose-sm prose-slate dark:prose-invert prose-headings:font-mono"
 >
   <a href="{{ .RelPermalink }}"><h2>{{ .Title }}</h2></a>
-  {{ .Content }} {{ if (gt (len .Pages) 0) }}
-  <hr />
-  {{ range .Pages }} {{ .Render "li" }} {{ end }} {{ end }}
+  {{ .Content }} {{ if (gt (len .Pages) 0) }} {{ range .Pages }} {{ .Render "li"
+  }} {{ end }} {{ end }}
 </article>

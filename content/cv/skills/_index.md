@@ -1,4 +1,4 @@
 +++
-title = 'Skills and Qualifications'
+title = 'Skills'
 type = 'skills'
 +++

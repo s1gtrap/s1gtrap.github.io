@@ -1,13 +1,13 @@
 {{ define "main" }}
 
-<article>
+<article
+  class="prose prose-sm prose-slate dark:prose-invert prose-headings:font-mono prose-headings:font-normal gap-x-4 max-w-none"
+>
   <a href="{{ .RelPermalink }}"><h2>{{ .Title }}</h2></a>
   {{ .Content }}
-  <hr />
+
   <div class="grid grid-rows-4 grid-flow-col gap-4">
-    {{ range .Pages }}
-    <div>{{ .Render "li" }}</div>
-    {{ end }}
+    {{ range .Pages }} {{ .Render "li" }} {{ end }}
   </div>
 </article>
 

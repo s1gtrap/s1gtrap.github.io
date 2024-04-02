@@ -1,7 +1,7 @@
 +++
 title = 'C'
 type = 'skills'
-level = 5
+level = 4
 +++
 
 `content/cv/skills/c.md`

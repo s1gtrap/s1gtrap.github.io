@@ -6,7 +6,7 @@
     </h2></a
   >
   {{ .Content }} {{ if (gt (len .Pages) 0) }}
-  <hr />
+
   <div style="display: flex; flex-direction: row; gap: 8px">
     {{ range .Pages }}
     <div>{{ .Render "li" }}</div>
