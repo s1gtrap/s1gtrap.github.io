@@ -1,14 +1,10 @@
 {{ define "main" }}
 
-<pre>layouts/skills/list.html</pre>
-
-<article
-  style="border: 1px solid black; padding: 8px; background: rgba(0, 0, 0, 0.1)"
->
+<article>
   <a href="{{ .RelPermalink }}"><h2>{{ .Title }}</h2></a>
   {{ .Content }}
   <hr />
-  <div style="display: flex; flex-direction: row; gap: 8px">
+  <div class="grid grid-rows-4 grid-flow-col gap-4">
     {{ range .Pages }}
     <div>{{ .Render "li" }}</div>
     {{ end }}
