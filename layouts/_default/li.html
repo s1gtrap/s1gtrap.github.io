@@ -1,5 +1,5 @@
 <article
-  class="prose prose-sm prose-slate dark:prose-invert prose-headings:font-mono"
+  class="prose prose-sm prose-slate dark:prose-invert prose-headings:font-mono max-w-none"
 >
   <a href="{{ .RelPermalink }}"><h2>{{ .Title }}</h2></a>
   {{ .Content }} {{ if (gt (len .Pages) 0) }} {{ range .Pages }} {{ .Render "li"
