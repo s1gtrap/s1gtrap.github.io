@@ -6,7 +6,7 @@
   <a href="{{ .RelPermalink }}"><h2>{{ .Title }}</h2></a>
   {{ .Content }}
 
-  <div class="grid grid-rows-4 grid-flow-col gap-4">
+  <div class="grid grid-cols-5 gap-4">
     {{ range .Pages }} {{ .Render "li" }} {{ end }}
   </div>
 </article>

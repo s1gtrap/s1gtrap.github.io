@@ -1,3 +1,16 @@
+{{ if isset .Params "level" }}
+<div
+  class="border-2 border-slate-600 bg-slate-700 text-slate-200 rounded text-center py-3"
+>
+  <p class="m-0">{{ .Params.title }}</p>
+  <p class="m-0">
+    {{ range (seq .Params.level) }} <span class="text-sky-400">★</span> {{ end
+    }} {{ range (seq (math.Sub 5 .Params.level)) }}
+    <span class="text-slate-500">☆</span> {{ end }}
+  </p>
+  <a href="{{ .RelPermalink }}" class="text-xs text-slate-400 m-0">Read more</a>
+</div>
+{{ else }}
 <article>
   <a href="{{ .RelPermalink }}"
     ><h2>
@@ -7,10 +20,11 @@
   >
   {{ .Content }} {{ if (gt (len .Pages) 0) }}
 
-  <div style="display: flex; flex-direction: row; gap: 8px">
-    {{ range .Pages }}
+  <div class="grid grid-cols-5 gap-4">
+    {{ range (.Pages.ByParam "level").Reverse }}
     <div>{{ .Render "li" }}</div>
     {{ end }}
   </div>
   {{ end }}
 </article>
+{{ end }}
