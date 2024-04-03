@@ -1,10 +1,11 @@
 {{ define "main" }}
 
-<pre>layouts/skills/single.html</pre>
-
-<article style="border: 1px solid black; padding: 8px">
-  <h2>{{ .Title }} - {{ .Params.level }}/5</h2>
-  {{ .Content }}
+<article
+  class="prose prose-sm prose-slate dark:prose-invert prose-headings:font-mono prose-headings:font-normal gap-x-4 max-w-none"
+>
+  <h2 class="float-left">{{ .Title }}</h2>
+  <div class="m-0 float-right">{{ partial "stars.html" .Params.level }}</div>
+  <div class="clear-left">{{ .Content }}</div>
 </article>
 
 {{ end }}
