@@ -7,7 +7,7 @@
   {{ .Content }}
 
   <div class="grid grid-cols-5 gap-4">
-    {{ range .Pages }} {{ .Render "li" }} {{ end }}
+    {{ range (.Pages.ByParam "level").Reverse }} {{ .Render "li" }} {{ end }}
   </div>
 </article>
 
