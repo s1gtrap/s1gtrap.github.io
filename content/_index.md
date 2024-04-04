@@ -17,7 +17,7 @@ I can always be reached by mail at `will at brt dot sexy` or `will at ${location
 You can also try me on Matrix:
 <a class="no-underline" href="https://matrix.to/#/@s1gtrap:matrix.org"><img class="inline w-4 h-4 m-0" src="https://matrix.org/assets/favicon.svg" /> `@s1gtrap:matrix.org`</a>
 
-I can also be found on other social media junctions under my pseudonym `@s1gtrap` including:
+I can also be found on other social media junctions under my pseudonym `@s1g[trap]` including:
 [<svg
   xmlns="http://www.w3.org/2000/svg"
   class="inline h-4 w-4"
