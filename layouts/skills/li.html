@@ -1,6 +1,6 @@
 {{ if isset .Params "level" }}
 <div
-  class="border-2 border-slate-600 bg-slate-700 text-slate-200 rounded text-center py-3"
+  class="border-2 border-slate-600 bg-slate-700 text-slate-200 rounded text-center py-3 truncate"
 >
   <p class="m-0">{{ .Params.title }}</p>
   <p class="m-0">{{ partial "stars.html" .Params.level }}</p>
