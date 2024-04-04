@@ -17,12 +17,9 @@
     <link rel="manifest" href="{{ (resources.Get "site.webmanifest").RelPermalink }}">
   </head>
   <body class="bg-slate-100 dark:bg-slate-900 prose-headings:font-mono prose-headings:font-normal">
-    {{ partial "header.html" . }}
-
-    <div
-      class="container mx-auto"
-    >
+    <div class="container mx-auto">
       <div class="grid grid-cols-12">
+        {{ partial "header.html" . }}
         {{ partial "navbar.html" . }}
         <div class="mx-1 md:col-start-2 md:col-span-10 col-start-1 col-span-12 p-4 min-h-screen bg-slate-50 dark:bg-slate-800 border-x dark:border-slate-700">
           {{ block "main" . }}{{ end }}
