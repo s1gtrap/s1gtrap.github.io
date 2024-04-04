@@ -50,10 +50,23 @@ html {
   content: " 😎";
 }
 
+article {
+  margin-bottom: 1em;
+}
+
 article article h2 {
   font-size: 20px !important;
 }
 
 article article article h2 {
-  font-size: 15px !important;
+  font-size: 16px !important;
+}
+
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+  text-decoration: none !important;
 }
