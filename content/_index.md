@@ -4,13 +4,13 @@ slug = 'about'
 menus = 'main'
 +++
 
-### About Me
+## About Me
 
 I'm William! A graduate of computer science with a bachelor's degree from [Aarhus University](https://www.au.dk/en).
 
 I have a passion for low-level systems programming, highly interactive user experiences, and the interaction between the two!
 
-### Contact & Social
+## Contact & Social
 
 I can always be reached by mail at `will at brt dot sexy` or `will at ${location.hostname}`.
 
@@ -41,7 +41,7 @@ I can also be found on other social media junctions under my pseudonym `@s1g[tra
     d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
 </svg> Twitter](https://twitter.com/s1gtrap) and [<svg class="inline h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 568 501"><title>Bluesky butterfly logo</title><path fill="currentColor" d="M123.121 33.664C188.241 82.553 258.281 181.68 284 234.873c25.719-53.192 95.759-152.32 160.879-201.21C491.866-1.611 568-28.906 568 57.947c0 17.346-9.945 145.713-15.778 166.555-20.275 72.453-94.155 90.933-159.875 79.748C507.222 323.8 536.444 388.56 473.333 453.32c-119.86 122.992-172.272-30.859-185.702-70.281-2.462-7.227-3.614-10.608-3.631-7.733-.017-2.875-1.169.506-3.631 7.733-13.43 39.422-65.842 193.273-185.702 70.281-63.111-64.76-33.89-129.52 80.986-149.071-65.72 11.185-139.6-7.295-159.875-79.748C9.945 203.659 0 75.291 0 57.946 0-28.906 76.135-1.612 123.121 33.664Z"></path></svg> Bluesky](https://bsky.app/profile/s1g.bsky.social).
 
-#### PGP
+### PGP
 
 |                   |                                                     |
 | ----------------- | --------------------------------------------------- |
@@ -49,7 +49,7 @@ I can also be found on other social media junctions under my pseudonym `@s1g[tra
 | Key File          | [s1g.asc](/s1g.asc)                                 |
 | Fingerprint&nbsp; | `36F8 4AFF EAC0 CD51 6215 B11C A7A7 B978 2CCB A0BB` |
 
-### Okay, but what's with the name?
+## Okay, but what's with the name?
 
 ```bash
 $ man signal
