@@ -1,6 +1,7 @@
 +++
 title = 'JavaScript'
 type = 'skills'
+aliases = ['js']
 level = 4
 +++
 

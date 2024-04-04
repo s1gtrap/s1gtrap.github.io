@@ -1,6 +1,7 @@
 +++
 title = 'TypeScript'
 type = 'skills'
+aliases = ['ts']
 level = 3
 +++
 
