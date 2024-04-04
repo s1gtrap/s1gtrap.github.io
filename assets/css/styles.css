@@ -47,7 +47,7 @@ html {
 }
 
 .brand:hover:after {
-  content: "😎";
+  content: " 😎";
 }
 
 article article h2 {

@@ -1,5 +1,10 @@
-<nav style="border: 1px solid black; padding: 8px; margin-bottom: 8px">
-  {{ range .Ancestors.Reverse }}
-  <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a> -&gt; {{ end }}
-  <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
-</nav>
+<a href="{{ .RelPermalink }}" class="no-underline">
+  {{ if isset .Params "slug" }} {{ .Slug }} {{ else }} {{ .RelPermalink |
+  path.Base }} {{ end }}</a
+>
+{{ range first (math.Max (math.Sub (len .Ancestors) 1) 0) .Ancestors }} ::
+<a href="{{ .RelPermalink }}" class="no-underline"
+  >{{ .RelPermalink | path.Base }}</a
+>
+{{ end }} ::
+<a href="/" class="brand no-underline">s1g<span></span>trap</a>
