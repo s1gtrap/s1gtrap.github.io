@@ -8,12 +8,7 @@
 </div>
 {{ else }}
 <article>
-  <a href="{{ .RelPermalink }}"
-    ><h2>
-      {{ .Title }}{{ if (isset .Params "level") }} - {{ .Params.level }}/5{{ end
-      }}
-    </h2></a
-  >
+  <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
   {{ .Content }} {{ if (gt (len .Pages) 0) }}
 
   <div class="grid grid-cols-5 gap-4">
